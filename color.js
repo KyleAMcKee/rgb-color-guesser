@@ -4,6 +4,7 @@ let hint = document.querySelector('#hint');
 let resetButton = document.querySelector('#reset');
 let modeButtons = document.querySelectorAll('.mode');
 let message = document.querySelector('#message');
+let github = document.querySelector('svg');
 let selected = 1;
 let gameOver = 0;
 let mode = {0: 3, 1: 6, 2: 9, 3: 12}
@@ -28,6 +29,7 @@ const onClick = (idx) => {
         message.textContent = "Correct";
         resetButton.textContent = "Play again?";
         document.querySelector("h1").style.backgroundColor = color;
+        github.style.color = color;
         squares.forEach(square => {
             square.style.backgroundColor = color;
         });
@@ -62,6 +64,7 @@ const reset = (numOfSquares) => {
     document.querySelector("h1").style.backgroundColor = "steelblue";
     resetButton.textContent = "New Colors";
     colorID.textContent = colorArray[correctPosition];
+    github.style.color = "steelblue";
     message.textContent = "";
     squares.forEach((square, idx) => {
         square.style.backgroundColor = colorArray[idx]
